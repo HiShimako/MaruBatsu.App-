@@ -14,18 +14,18 @@ class ViewController: UIViewController {
     var currentQuestionNum: Int = 0
     // 問題
     let questions: [[String: Any]] = [
-        [
-            "question": "iPhoneアプリを開発する統合環境はZcodeである",
-            "answer": false
-        ],
-        [
-            "question": "Xcode画面の右側にはユーティリティーズがある",
-            "answer": true
-        ],
-        [
-            "question": "UILabelは文字列を表示する際に利用する",
-            "answer": true
-        ]
+        //        [
+        //            "question": "iPhoneアプリを開発する統合環境はZcodeである",
+        //            "answer": false
+        //        ],
+        //        [
+        //            "question": "Xcode画面の右側にはユーティリティーズがある",
+        //            "answer": true
+        //        ],
+        //        [
+        //            "question": "UILabelは文字列を表示する際に利用する",
+        //            "answer": true
+        //        ]
     ]
     
     override func viewDidLoad() {
@@ -34,18 +34,21 @@ class ViewController: UIViewController {
     }
     
     func showQuestion(){
-        let question = questions[currentQuestionNum]
-        if let que = question["question"] as? String {
-            questionLabel.text = que
-        }
+        if questions.count == 0 {
+            questionLabel.text = "答えが入っていません。問題を追加してください。"} else {
+                let question = questions[currentQuestionNum]
+                if let que = question["question"] as? String {
+                    questionLabel.text = que
+                }
+            }
     }
     
     func checkAnswer(yourAnswer: Bool) {
-
+        
         let question = questions[currentQuestionNum]
-
+        
         if let ans = question["answer"] as? Bool {
-
+            
             if yourAnswer == ans {
                 //正解のときの処理
                 currentQuestionNum += 1
@@ -53,7 +56,7 @@ class ViewController: UIViewController {
             } else {
                 //不正解のときの処理
                 showAlert(message: "不正解")
-
+                
             }
         } else {
             print("答えが入ってません")
@@ -62,8 +65,8 @@ class ViewController: UIViewController {
         if currentQuestionNum >= questions.count {
             currentQuestionNum = 0
         }
-
- 
+        
+        
         showQuestion()
     }
     
