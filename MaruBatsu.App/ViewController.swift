@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     
     func showQuestion(){
         if questions.count == 0 {
-            questionLabel.text = "答えが入っていません。問題を追加してください。"} else {
+            questionLabel.text = "問題を追加してね"} else {
                 let question = questions[currentQuestionNum]
                 if let que = question["question"] as? String {
                     questionLabel.text = que
@@ -59,18 +59,16 @@ class ViewController: UIViewController {
                 
             }
         } else {
-            print("答えが入ってません")
+            print("答えがありません")
             return
         }
         if currentQuestionNum >= questions.count {
             currentQuestionNum = 0
         }
-        
-        
         showQuestion()
     }
     
-    // アラートを表示する関数
+    // 採点アラートを表示する関数
     func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
@@ -81,12 +79,30 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //注意アラートを表示する関数
+    func cautionAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+        
+        //定数alertに定数closeを追加する
+        alert.addAction(close)
+        
+        //animationがonの状態でalertを表示する、alert実行後は何もしない
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func tappedNoButton(_ sender: Any) {
-        checkAnswer(yourAnswer: false)
+        if questions.count == 0 {
+            cautionAlert(message: "問題がないよ") } else {
+                checkAnswer(yourAnswer: false)
+            }
         
     }
     @IBAction func tappedYesButton(_ sender: Any) {
-        checkAnswer(yourAnswer: true)
+        if questions.count == 0 {
+        cautionAlert(message: "問題がないよ") } else {
+            checkAnswer(yourAnswer: true)
+        }
     }
     
     

@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="50" id="G0v-nj-TeX"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="問題を作成します">
+                                <buttonConfiguration key="configuration" style="plain" title="問題を追加">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -173,6 +173,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F31-xW-01I"/>
+                    <connections>
+                        <outlet property="addQFeild" destination="53V-PL-ZwI" id="VFW-rQ-A0u"/>
+                        <outlet property="answerSelect" destination="uDe-bt-TS1" id="0wK-I2-vxS"/>
+                        <outlet property="saveButton" destination="PDh-so-m5w" id="j55-pV-ZOO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnh-Ri-RAg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
