@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     // 表示中の問題番号を格納

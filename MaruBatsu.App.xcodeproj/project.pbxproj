@@ -13,6 +13,7 @@
 		CE32D7222AA2AE9C00B16702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32D7202AA2AE9C00B16702 /* Main.storyboard */; };
 		CE32D7242AA2AE9E00B16702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE32D7232AA2AE9E00B16702 /* Assets.xcassets */; };
 		CE32D7272AA2AE9E00B16702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE32D7252AA2AE9E00B16702 /* LaunchScreen.storyboard */; };
+		CEA4FA8F2AA5C41800F17445 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4FA8E2AA5C41800F17445 /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE32D7232AA2AE9E00B16702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE32D7262AA2AE9E00B16702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE32D7282AA2AE9E00B16702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA4FA8E2AA5C41800F17445 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				CE32D71A2AA2AE9C00B16702 /* AppDelegate.swift */,
 				CE32D71C2AA2AE9C00B16702 /* SceneDelegate.swift */,
 				CE32D71E2AA2AE9C00B16702 /* ViewController.swift */,
+				CEA4FA8E2AA5C41800F17445 /* QuestionViewController.swift */,
 				CE32D7202AA2AE9C00B16702 /* Main.storyboard */,
 				CE32D7232AA2AE9E00B16702 /* Assets.xcassets */,
 				CE32D7252AA2AE9E00B16702 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				CE32D71F2AA2AE9C00B16702 /* ViewController.swift in Sources */,
 				CE32D71B2AA2AE9C00B16702 /* AppDelegate.swift in Sources */,
+				CEA4FA8F2AA5C41800F17445 /* QuestionViewController.swift in Sources */,
 				CE32D71D2AA2AE9C00B16702 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
