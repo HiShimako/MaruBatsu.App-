@@ -123,6 +123,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="問題を保存する"/>
+                                <connections>
+                                    <action selector="SaveButton:" destination="I9b-27-t3T" eventType="touchUpInside" id="hmC-3C-opF"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uDe-bt-TS1">
                                 <rect key="frame" x="146.66666666666666" y="376" width="100" height="41"/>
@@ -174,9 +177,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="F31-xW-01I"/>
                     <connections>
-                        <outlet property="addQFeild" destination="53V-PL-ZwI" id="VFW-rQ-A0u"/>
+                        <outlet property="addQField" destination="53V-PL-ZwI" id="uoY-Sh-3MR"/>
                         <outlet property="answerSelect" destination="uDe-bt-TS1" id="0wK-I2-vxS"/>
-                        <outlet property="saveButton" destination="PDh-so-m5w" id="j55-pV-ZOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnh-Ri-RAg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
