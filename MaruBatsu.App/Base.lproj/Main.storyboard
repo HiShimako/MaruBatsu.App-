@@ -137,6 +137,9 @@
                                     <segment title="✗"/>
                                     <segment title="◯"/>
                                 </segments>
+                                <connections>
+                                    <action selector="answerSelected:" destination="I9b-27-t3T" eventType="valueChanged" id="p6p-ge-V1K"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-KZ-WMn">
                                 <rect key="frame" x="0.0" y="742" width="393" height="50"/>
@@ -178,7 +181,6 @@
                     <navigationItem key="navigationItem" id="F31-xW-01I"/>
                     <connections>
                         <outlet property="addQField" destination="53V-PL-ZwI" id="uoY-Sh-3MR"/>
-                        <outlet property="answerSelect" destination="uDe-bt-TS1" id="0wK-I2-vxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnh-Ri-RAg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,58 +10,60 @@ import UIKit
 class QuestionViewController: UIViewController {
     
     @IBOutlet weak var addQField: UITextField!
-    
-    @IBOutlet weak var answerSelect: UISegmentedControl!
-    
+
     var questions: [[String: Any]] = []
+    var answer = false
     
-
-
-    
-    //保存ボタン動作を定義
+    @IBAction func answerSelected(_ sender: Any) {
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            answer = false
+        case 1:
+            answer = true
+        default:
+            break
+        }
+    }
+    //保存ボタン動作を定義しよう。
     //保存ボタンを押すとテキストフィールドのテキストとセグメントの選択値がクエスチョンに保存されて
     //配列questionsに新しい問題答えセットが保存されれて、
-    //テキストボックスに値がない時無い時アラートが出る。
+    //テキストボックスに値がない時無い時アラートが出る
     @IBAction func SaveButton(_ sender: Any) {
-        guard let questionText = addQField.text,!questionText.isEmpty else {
-              showAlert(message: "問題を入力してね")
-                return
-  
-                let userDefaulets = UserDefaults.standard
-                userDefaulets.set(questions, forKey: "add")
-                
-                
+        //ボタンを押した時にテキストボックス空だったら新しいクエスチョンを作成それ以外ならアラート
+        if addQField.text != "" {let newQuestion = addQField.text} else { showAlert(message: "問題を入力してね")
+        }
+        //更にニュークエスチョンとセグメントの値を組み合わせてquestions配列に入れていきたい。
+        
+        
+        //            newQuestion.append(addQField.text!)
+        //        fun questionSet
+        //            userDefaults.set(questions, forKey: "add") //キー"add"で配列をUserDefaultsに保存
+        //        guard let questionText = addQField.text else {
+        //            showAlert(message: "問題を入力してね")
+    }
 
-//                +       let userDefaults = UserDefaults.standard //そのままだと長いので変数にいれる
-//                +       taskArray.append(addTextField.text!) //TextFieldで記入されたテキストを入れる
-//                +       userDefaults.set(taskArray, forKey: "add") //キー"add"で配列をUserDefaultsに保存
-    }
-    
-    
-    
-    
-    
+override func viewDidLoad() {
+    super.viewDidLoad()
+    let userDefaults = UserDefaults.standard
+       //"add"というキーで保存された値がなにかある -> 値をtaskArrayへ
+       if userDefaults.object(forKey: "add") != nil {
+           questions = userDefaults.object(forKey: "add") as! [[String: Any]]
+       }
 
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
-    // アラートを表示する関数
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
-        //定数alertに定数closeを追加する
-        alert.addAction(close)
-        //animationがonの状態でalertを表示する、alert実行後は何もしない
-        present(alert, animated: true, completion: nil)
-    }
-    
-    //                        questions = userDefaults.object(forKey: "add") as! [String]
-    
+// アラートを表示する関数
+func showAlert(message: String) {
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+    //定数alertに定数closeを追加する
+    alert.addAction(close)
+    //animationがonの状態でalertを表示する、alert実行後は何もしない
+    present(alert, animated: true, completion: nil)
 }
+
+//                        questions = userDefaults.object(forKey: "add") as! [String]
+
+}}
+
 
 
 /*
@@ -74,7 +76,7 @@ class QuestionViewController: UIViewController {
  }
  */
 
-}
+
 
 
 
