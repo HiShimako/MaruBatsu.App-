@@ -27,13 +27,6 @@ class ViewController: UIViewController {
         //            "answer": true
         //        ]
     ]
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        showQuestion()
-    }
-    
     func showQuestion(){
         if questions.count == 0 {
             questionLabel.text = "問題を追加してね"} else {
@@ -42,6 +35,11 @@ class ViewController: UIViewController {
                     questionLabel.text = que
                 }
             }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showQuestion()
     }
     
     func checkAnswer(yourAnswer: Bool) {
@@ -69,6 +67,15 @@ class ViewController: UIViewController {
         showQuestion()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let userDefaults = UserDefaults.standard
+        if userDefaults.object(forKey: "add") != nil {
+            questions = userDefaults.object(forKey: "add") as! [[String: Any]]
+            showQuestion()
+        }
+    }
+    
     // アラートを表示する関数
     func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -89,9 +96,9 @@ class ViewController: UIViewController {
     }
     @IBAction func tappedYesButton(_ sender: Any) {
         if questions.count == 0 {
-        showAlert(message: "問題がないよ") } else {
-            checkAnswer(yourAnswer: true)
-        }
+            showAlert(message: "問題がないよ") } else {
+                checkAnswer(yourAnswer: true)
+            }
     }
     
     
