@@ -80,7 +80,6 @@ class ViewController: UIViewController {
     func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
-        
         //定数alertに定数closeを追加する
         alert.addAction(close)
         //animationがonの状態でalertを表示する、alert実行後は何もしない
@@ -92,13 +91,16 @@ class ViewController: UIViewController {
             showAlert(message: "問題がないよ") } else {
                 checkAnswer(yourAnswer: false)
             }
+        self.dismiss(animated: true, completion: nil)
         
     }
     @IBAction func tappedYesButton(_ sender: Any) {
         if questions.count == 0 {
             showAlert(message: "問題がないよ") } else {
-                checkAnswer(yourAnswer: true)
             }
+    }
+    
+    @IBAction func deleteAllQ(_ sender: Any) {
     }
     
     
