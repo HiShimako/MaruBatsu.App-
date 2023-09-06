@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     
     func checkAnswer(yourAnswer: Bool) {
         
-        let question = questions[currentQuestionNum]
+        let question = questions [currentQuestionNum]
         
         if let ans = question["answer"] as? Bool {
             
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         
     }
     @IBAction func tappedYesButton(_ sender: Any) {
-        if questions.count == 1 {
+        if questions.count == 0 {
             showAlert(message: "問題がないよ") } else {
                 checkAnswer(yourAnswer: true)
             }
