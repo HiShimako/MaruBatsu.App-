@@ -8,8 +8,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-    
-    let userDefaults = UserDefaults.standard //そのままだと長いので変数にいれる
+//    let userDefaults = UserDefaults.standard
 
     
     @IBAction func returnTop(_ sender: Any) {
@@ -46,13 +45,15 @@ class QuestionViewController: UIViewController {
         if addQField.text != "" {
             let newQuestion = addQField.text
             questions.append(["question": newQuestion!, "answer": answer])
-//        let userDefaults = UserDefaults.standard
+        let userDefaults = UserDefaults.standard
             userDefaults.set(questions, forKey: "add")
             showAlert(message: "問題を保存したよ")
         } else {
             showAlert(message: "問題を入力してね")
         }
         addQField.text = ""
+        print(questions)
+
     }
     
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func deleteAllQ(_ sender: Any) {
         questions.removeAll()
+        let userDefaults = UserDefaults.standard
         userDefaults.set(questions, forKey: "add")
         showAlert(message: "全ての問題が削除されました")
         print(questions)
