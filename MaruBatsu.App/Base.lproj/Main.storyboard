@@ -97,9 +97,9 @@
         <!--Question View Controller-->
         <scene sceneID="Mvq-qM-6rM">
             <objects>
-                <viewController id="I9b-27-t3T" customClass="QuestionViewController" customModule="MaruBatsu_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="I9b-27-t3T" customClass="QuestionViewController" customModule="MaruBatsu_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9h2-gH-yaq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1b-sw-c9y">
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDh-so-m5w">
-                                <rect key="frame" x="96.666666666666686" y="446" width="200" height="50"/>
+                                <rect key="frame" x="96.666666666666686" y="451" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="gH2-ob-jIx"/>
                                     <constraint firstAttribute="height" constant="50" id="jKg-e6-0PN"/>
@@ -128,7 +128,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uDe-bt-TS1">
-                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="41"/>
+                                <rect key="frame" x="146.66666666666666" y="381" width="100" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7jh-BA-0Ns"/>
                                     <constraint firstAttribute="width" constant="100" id="mrl-6M-tnB"/>
@@ -142,7 +142,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-KZ-WMn">
-                                <rect key="frame" x="0.0" y="742" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="752" width="393" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="N72-jf-kwN"/>
                                 </constraints>
@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53V-PL-ZwI">
-                                <rect key="frame" x="8" y="296" width="377" height="50"/>
+                                <rect key="frame" x="8" y="301" width="377" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PgK-0g-fAw"/>
                                 </constraints>

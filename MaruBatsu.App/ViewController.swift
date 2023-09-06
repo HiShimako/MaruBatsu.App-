@@ -91,12 +91,12 @@ class ViewController: UIViewController {
             showAlert(message: "問題がないよ") } else {
                 checkAnswer(yourAnswer: false)
             }
-        self.dismiss(animated: true, completion: nil)
         
     }
     @IBAction func tappedYesButton(_ sender: Any) {
-        if questions.count == 0 {
+        if questions.count == 1 {
             showAlert(message: "問題がないよ") } else {
+                checkAnswer(yourAnswer: true)
             }
     }
     
