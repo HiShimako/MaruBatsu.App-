@@ -9,6 +9,9 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard //そのままだと長いので変数にいれる
+
+    
     @IBAction func returnTop(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -28,6 +31,11 @@ class QuestionViewController: UIViewController {
             break
         }
     }
+//    +       let userDefaults = UserDefaults.standard //そのままだと長いので変数にいれる
+//
+//    +       taskArray.append(addTextField.text!) //TextFieldで記入されたテキストを入れる
+//
+//    +       userDefaults.set(taskArray, forKey: "add")
     //保存ボタン動作を定義しよう。
     //保存ボタンを押すとテキストフィールドのテキストとセグメントの選択値がクエスチョンに保存されて
     //配列questionsに新しい問題答えセットが保存されれて、テキストは削除される
@@ -38,12 +46,12 @@ class QuestionViewController: UIViewController {
         if addQField.text != "" {
             let newQuestion = addQField.text
             questions.append(["question": newQuestion!, "answer": answer])
-            let userDefaults = UserDefaults.standard
-                            userDefaults.set(questions, forKey: "add")
+//        let userDefaults = UserDefaults.standard
+            userDefaults.set(questions, forKey: "add")
             showAlert(message: "問題を保存したよ")
         } else {
             showAlert(message: "問題を入力してね")
-            }
+        }
         addQField.text = ""
     }
     
@@ -55,8 +63,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func deleteAllQ(_ sender: Any) {
         questions.removeAll()
-        let defaults = UserDefaults.standard
-        defaults.set(questions, forKey: "add")
+        userDefaults.set(questions, forKey: "add")
         showAlert(message: "全ての問題が削除されました")
         print(questions)
     }
